@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnX - Nền tảng học trực tuyến hàng đầu</title>
+    <meta name="description" content="Khóa học từ cơ bản đến nâng cao về lập trình, thiết kế, và trí tuệ nhân tạo.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> LearnX
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm khóa học...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="nav-links">
+                <a href="#courses">Khóa học</a>
+                <a href="#certifications">Chứng chỉ</a>
+                <a href="#community">Cộng đồng</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn-login" id="loginBtn" onclick="openAuthModal('login')">Đăng nhập</button>
+                <button class="btn-signup" id="signupBtn" onclick="openAuthModal('signup')">Đăng ký</button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Học hỏi kỹ năng mới, <span class="highlight">Kiến tạo tương lai</span></h1>
+            <p>Khám phá hàng ngàn khóa học chất lượng cao từ cơ bản đến chuyên sâu. Nâng tầm sự nghiệp của bạn ngay hôm
+                nay cùng LearnX.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary"
+                    onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Khám phá
+                    ngay</button>
+                <button class="btn-secondary"
+                    onclick="document.getElementById('certifications').scrollIntoView({behavior:'smooth'})">Tìm hiểu
+                    thêm</button>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Khóa học</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50k+</h3>
+                    <p>Học viên</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.8/5</h3>
+                    <p>Đánh giá</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="glass-card image-card">
+                <img src="images/hero_learning_1778118330279.png" alt="Học trực tuyến">
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Levels Section -->
+    <section id="courses" class="courses-section">
+        <div class="section-header">
+            <h2>Lộ trình từ Cơ bản đến Nâng cao</h2>
+            <p>Phát triển kỹ năng của bạn qua từng giai đoạn với lộ trình học tập được thiết kế chuẩn xác.</p>
+        </div>
+        <div class="course-categories">
+            <button class="category-btn active" data-filter="all">Tất cả</button>
+            <button class="category-btn" data-filter="basic">Cơ bản</button>
+            <button class="category-btn" data-filter="intermediate">Trung cấp</button>
+            <button class="category-btn" data-filter="advanced">Nâng cao</button>
+            <button class="category-btn" data-filter="technology" onclick="filterByAttr('cat','technology')">💻 Công
+                nghệ</button>
+            <button class="category-btn" data-filter="design" onclick="filterByAttr('cat','design')">🎨 Thiết
+                kế</button>
+            <button class="category-btn" data-filter="business" onclick="filterByAttr('cat','business')">💼 Kinh
+                doanh</button>
+            <button class="category-btn" data-filter="finance" onclick="filterByAttr('cat','finance')">📈 Tài
+                chính</button>
+            <button class="category-btn" data-filter="marketing" onclick="filterByAttr('cat','marketing')">📱
+                Marketing</button>
+            <button class="category-btn" data-filter="health" onclick="filterByAttr('cat','health')">🥗 Sức
+                khỏe</button>
+            <button class="category-btn" data-filter="language" onclick="filterByAttr('cat','language')">🗣️ Ngôn
+                ngữ</button>
+            <button class="category-btn" data-filter="science" onclick="filterByAttr('cat','science')">🧠 Khoa
+                học</button>
+        </div>
+        <div class="course-grid" id="courseGrid">
+
+            <!-- Python -->
+            <div class="course-card" data-level="basic">
+                <div class="course-image">
+                    <img src="images/course_python_1778118354919.png" alt="Python">
+                    <span class="badge basic">Cơ bản</span>
+                </div>
+                <div class="course-content">
+                    <h3>Python cho người mới bắt đầu</h3>
+                    <p class="instructor">Bởi Nguyễn Văn A</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-star"></i> 4.9 (1.2k)</span>
+                        <span><i class="fas fa-clock"></i> 20 giờ</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="price">Miễn phí</span>
+                        <button class="btn-enroll" onclick="openCourseModal('python')">Học &amp; Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HTML/CSS/JS -->
+            <div class="course-card" data-level="basic">
+                <div class="course-image">
+                    <img src="images/course_webdev_1778118376821.png" alt="Web Dev">
+                    <span class="badge basic">Cơ bản</span>
+                </div>
+                <div class="course-content">
+                    <h3>HTML, CSS &amp; JavaScript Foundation</h3>
+                    <p class="instructor">Bởi Trần Thị B</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-star"></i> 4.8 (850)</span>
+                        <span><i class="fas fa-clock"></i> 25 giờ</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="price">Miễn phí</span>
+                        <button class="btn-enroll" onclick="openCourseModal('webdev')">Học &amp; Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ReactJS -->
+            <div class="course-card" data-level="intermediate">
+                <div class="course-image">
+                    <img src="images/course_webdev_1778118376821.png" alt="ReactJS">
+                    <span class="badge intermediate">Trung cấp</span>
+                </div>
+                <div class="course-content">
+                    <h3>Phát triển Web Frontend với ReactJS</h3>
+                    <p class="instructor">Bởi Lê Văn C</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-star"></i> 4.7 (620)</span>
+                        <span><i class="fas fa-clock"></i> 35 giờ</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="price">Miễn phí</span>
+                        <button class="btn-enroll" onclick="openCourseModal('react')">Học &amp; Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deep Learning AI -->
+            <div class="course-card" data-level="advanced">
+                <div class="course-image">
+                    <img src="images/course_ai_1778118398059.png" alt="AI">
+                    <span class="badge advanced">Nâng cao</span>
+                </div>
+                <div class="course-content">
+                    <h3>Deep Learning &amp; AI Masterclass</h3>
+                    <p class="instructor">Bởi TS. Phạm D</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-star"></i> 4.9 (430)</span>
+                        <span><i class="fas fa-clock"></i> 50 giờ</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="price">Miễn phí</span>
+                        <button class="btn-enroll" onclick="openCourseModal('ai')">Học &amp; Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business -->
+            <div class="course-card" data-level="basic">
+                <div class="course-image">
+                    <img src="images/course_business_1778119185318.png" alt="Kinh doanh">
+                    <span class="badge basic">Cơ bản</span>
+                </div>
+                <div class="course-content">
+                    <h3>Khởi sự Kinh doanh &amp; Startup</h3>
+                    <p class="instructor">Bởi Doanh nhân E</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-star"></i> 4.8 (950)</span>
+                        <span><i class="fas fa-clock"></i> 15 giờ</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="price">Miễn phí</span>
+                        <button class="btn-enroll" onclick="openCourseModal('business')">Học &amp; Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Management -->
+            <div class="course-card" data-level="intermediate">
+                <div class="course-image">
+                    <img src="images/course_data_1778119207331.png" alt="Quản lý dữ liệu">
+                    <span class="badge intermediate">Trung cấp</span>
+                </div>
+                <div class="course-content">
+                    <h3>Quản trị Cơ sở Dữ liệu Hệ thống</h3>
+                    <p class="instructor">Bởi Kỹ sư F</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-star"></i> 4.7 (540)</span>
+                        <span><i class="fas fa-clock"></i> 30 giờ</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="price">Miễn phí</span>
+                        <button class="btn-enroll" onclick="openCourseModal('datamngt')">Học &amp; Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Modeling -->
+            <div class="course-card" data-level="advanced">
+                <div class="course-image">
+                    <img src="images/course_datamodeling_1778119228978.png" alt="Data Modeling">
+                    <span class="badge advanced">Nâng cao</span>
+                </div>
+                <div class="course-content">
+                    <h3>Mô hình hóa Dữ liệu (Data Modeling)</h3>
+                    <p class="instructor">Bởi Data Scientist G</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-star"></i> 4.9 (820)</span>
+                        <span><i class="fas fa-clock"></i> 40 giờ</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="price">Miễn phí</span>
+                        <button class="btn-enroll" onclick="openCourseModal('datamodel')">Học &amp; Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Certificate -->
+            <div class="course-card" data-level="advanced">
+                <div class="course-image">
+                    <img src="images/course_aicert_1778119251405.png" alt="Chứng chỉ AI">
+                    <span class="badge advanced">Nâng cao</span>
+                </div>
+                <div class="course-content">
+                    <h3>Chứng chỉ chuyên nghiệp AI Engineer</h3>
+                    <p class="instructor">Bởi LearnX Academy</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-star"></i> 5.0 (2k+)</span>
+                        <span><i class="fas fa-clock"></i> 80 giờ</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="price">Miễn phí</span>
+                        <button class="btn-enroll" onclick="openCourseModal('aicert')">Học &amp; Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tiếp tục khám phá -->
+    <section id="recentSection">
+        <div class="section-header">
+            <h2>🕐 Tiếp tục khám phá</h2>
+            <p>Các khóa học bạn đã xem gần đây — tiếp tục từ nơi bạn dừng lại.</p>
+        </div>
+        <div class="recent-grid" id="recentGrid"></div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="courses-section" style="background: rgba(0,0,0,0.2); margin-top: 50px;">
+        <div class="section-header">
+            <h2>Chương trình cấp Chứng chỉ Chuyên môn</h2>
+            <p>Trang bị kỹ năng thực chiến và nhận chứng chỉ danh giá để thăng tiến sự nghiệp.</p>
+        </div>
+        <div class="course-grid">
+            <div class="course-card"
+                style="grid-column: span 2; flex-direction: row; align-items: center; display: flex;">
+                <div class="course-image" style="width: 40%; height: 100%;">
+                    <img src="images/course_aicert_1778119251405.png" alt="AI Certificate">
+                </div>
+                <div class="course-content" style="width: 60%;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Chứng chỉ AI Engineer Chuyên nghiệp</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Hoàn thành 6 chuỗi khóa học chuyên sâu từ
+                        cơ bản đến ứng dụng. Chương trình cung cấp kiến thức nền tảng vững chắc và kỹ năng MLOps thực
+                        chiến.</p>
+                    <ul style="list-style: none; margin-bottom: 20px; color: var(--text-muted); font-size: 0.95rem;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle"
+                                style="color: #10b981; margin-right: 10px;"></i> 100% Học phí Miễn phí</li>
+                        <li><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> Chứng nhận
+                            từ các tổ chức uy tín</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openCourseModal('aicert')">Bắt đầu học ngay</button>
+                </div>
+            </div>
+
+            <div class="course-card" style="grid-column: span 2; flex-direction: row; align-items: center; display: flex;">
+                <div class="course-image" style="width: 40%; height: 100%;">
+                    <img src="images/cert_cybersec.png" alt="Cybersecurity Certificate">
+                </div>
+                <div class="course-content" style="width: 60%;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Chứng chỉ Bảo mật thông tin (Cybersecurity)</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Làm chủ kiến thức bảo vệ hệ thống, phát hiện tấn công và bảo mật mạng lưới.</p>
+                    <ul style="list-style: none; margin-bottom: 20px; color: var(--text-muted); font-size: 0.95rem;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> Chứng nhận quốc tế</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> Đồ án thực tế &amp; Portfolio</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openCourseModal('cybersec')">Bắt đầu học ngay</button>
+                </div>
+            </div>
+
+            <div class="course-card" style="grid-column: span 2; flex-direction: row; align-items: center; display: flex;">
+                <div class="course-image" style="width: 40%; height: 100%;">
+                    <img src="images/cert_cloud.png" alt="Cloud Certificate">
+                </div>
+                <div class="course-content" style="width: 60%;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Chứng chỉ Cloud Architect (AWS)</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Kiến trúc và thiết kế hệ thống trên nền tảng điện toán đám mây Amazon Web Services.</p>
+                    <ul style="list-style: none; margin-bottom: 20px; color: var(--text-muted); font-size: 0.95rem;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> Chứng nhận quốc tế</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> Đồ án thực tế &amp; Portfolio</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openCourseModal('cloud')">Bắt đầu học ngay</button>
+                </div>
+            </div>
+
+            <div class="course-card"
+                style="grid-column: span 2; flex-direction: row; align-items: center; display: flex;">
+                <div class="course-image" style="width: 40%; height: 100%;">
+                    <img src="images/course_datamodeling_1778119228978.png" alt="Data Modeling Certificate">
+                </div>
+                <div class="course-content" style="width: 60%;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Chứng chỉ Data Analyst &amp; Modeling</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Phát triển tư duy phân tích dữ liệu, thiết
+                        kế hệ thống Data Warehouse và làm chủ các công cụ Data Analytics mạnh mẽ nhất hiện nay.</p>
+                    <ul style="list-style: none; margin-bottom: 20px; color: var(--text-muted); font-size: 0.95rem;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle"
+                                style="color: #10b981; margin-right: 10px;"></i> SQL, Python &amp; Tableau/PowerBI</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle"
+                                style="color: #10b981; margin-right: 10px;"></i> Thiết kế CSDL đa chiều</li>
+                        <li><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> Thực tập mô
+                            phỏng doanh nghiệp</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openCourseModal('datamodel')">Tìm hiểu chi tiết</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i> LearnX</a>
+                <p>Nền tảng học tập trực tuyến hàng đầu Việt Nam. Nâng tầm tri thức, kiến tạo tương lai.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Về chúng tôi</h4>
+                <a href="#">Giới thiệu</a>
+                <a href="#">Tuyển dụng</a>
+                <a href="#">Liên hệ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Hỗ trợ</h4>
+                <a href="#">Trung tâm trợ giúp</a>
+                <a href="#">Điều khoản sử dụng</a>
+                <a href="#">Chính sách bảo mật</a>
+            </div>
+            <div class="footer-col">
+                <h4>Ứng dụng</h4>
+                <div class="app-links">
+                    <button class="app-btn"><i class="fab fa-apple"></i> App Store</button>
+                    <button class="app-btn"><i class="fab fa-google-play"></i> Google Play</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LearnX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===== AUTH MODAL ===== -->
+    <div class="modal-overlay" id="authModal" onclick="if(event.target===this)closeAuthModal()">
+        <div class="modal-content glass-card">
+            <button class="close-btn" onclick="closeAuthModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Đăng nhập</h2>
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login" onclick="switchAuthTab('login')">Đăng nhập</button>
+                    <button class="auth-tab" data-tab="signup" onclick="switchAuthTab('signup')">Đăng ký</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" class="auth-form active" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="Nhập email của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Mật khẩu</label>
+                        <input type="password" id="loginPassword" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me"><input type="checkbox"> Nhớ mật khẩu</label>
+                        <a href="#" class="forgot-pwd">Quên mật khẩu?</a>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Đăng nhập</button>
+                    <div class="social-login">
+                        <p>Hoặc đăng nhập bằng</p>
+                        <div class="social-btns">
+                            <button type="button" class="social-btn google"><i class="fab fa-google"></i>
+                                Google</button>
+                            <button type="button" class="social-btn facebook"><i class="fab fa-facebook-f"></i>
+                                Facebook</button>
+                        </div>
+                    </div>
+                </form>
+                <form id="signupForm" class="auth-form" onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="signupName">Họ và tên</label>
+                        <input type="text" id="signupName" placeholder="Nhập họ và tên" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" placeholder="Nhập email của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Mật khẩu</label>
+                        <input type="password" id="signupPassword" placeholder="Tạo mật khẩu" required>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Đăng ký tài khoản</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Thành công!</span>
+    </div>
+
+    <!-- ===== QUIZ MODAL ===== -->
+    <div class="modal-overlay" id="quizModal" onclick="if(event.target===this)closeQuiz()">
+        <div class="modal-content glass-card quiz-content">
+            <button class="close-btn" onclick="closeQuiz()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2 id="quizTitle">Bài kiểm tra khóa học</h2>
+            </div>
+            <div class="modal-body">
+                <div id="quizContainer"></div>
+                <div id="quizResult" style="display:none; text-align:center; padding:20px 0;">
+                    <h3 style="font-size:2rem; margin-bottom:10px; color:var(--secondary-color);">Điểm số của bạn</h3>
+                    <div style="font-size:4rem; font-weight:800; margin-bottom:20px;" id="scoreDisplay">0/0</div>
+                    <p id="scoreMessage" style="margin-bottom:20px;">Hoàn thành xuất sắc!</p>
+                    <button class="btn-primary full-width" onclick="retryQuiz()">Làm lại bài Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CHATBOT ===== -->
+    <div class="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle"
+            onclick="document.getElementById('chatbotWindow').classList.add('open'); this.style.display='none';">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        <div class="chatbot-window glass-card" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+                <div>
+                    <h4>LearnX Assistant</h4>
+                    <span style="font-size:0.8rem; color:#10b981;">● Online</span>
+                </div>
+                <button class="chatbot-close"
+                    onclick="document.getElementById('chatbotWindow').classList.remove('open'); document.getElementById('chatbotToggle').style.display='flex';">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    <div class="message-content">Chào bạn! Mình là AI của LearnX 🤖. Hỏi mình về bất kỳ kiến thức gì,
+                        mình sẽ tra cứu và trả lời ngay!</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="Nhập tin nhắn..."
+                    onkeypress="if(event.key==='Enter')handleSend()">
+                <button onclick="handleSend()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== COURSE DETAIL MODAL ===== -->
+    <div class="modal-overlay" id="courseModal" onclick="if(event.target===this)closeCourse()">
+        <div class="modal-content glass-card" style="max-width:800px; max-height:90vh; overflow-y:auto;">
+            <button class="close-btn" onclick="closeCourse()"><i class="fas fa-times"></i></button>
+            <div class="modal-header" style="text-align:left; border-bottom:none;">
+                <h2 id="courseDetailTitle" style="font-size:2rem; margin-bottom:10px;">Tên khóa học</h2>
+                <div id="courseDetailDesc" style="color:var(--text-muted); font-size:1rem; margin-bottom:20px;"></div>
+            </div>
+            <div class="modal-body">
+                <div id="courseModulesList" class="modules-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LESSON VIEWER MODAL -->
+    <div class="modal-overlay" id="lessonModal" onclick="if(event.target===this)closeLesson()">
+        <div class="modal-content glass-card" style="max-width:860px;max-height:92vh;overflow-y:auto;">
+            <button class="close-btn" onclick="closeLesson()"><i class="fas fa-times"></i></button>
+            <div class="modal-header"
+                style="text-align:left;border-bottom:1px solid var(--border-color);padding-bottom:15px;">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+                    <span id="lessonIcon" style="font-size:2rem;">📖</span>
+                    <h2 id="lessonTitle" style="font-size:1.6rem;margin:0;">Tên bài giảng</h2>
+                </div>
+                <div style="display:flex;gap:20px;color:var(--text-muted);font-size:0.85rem;">
+                    <span id="lessonCourseLabel"><i class="fas fa-graduation-cap" style="margin-right:5px;"></i>Khóa
+                        học</span>
+                    <span id="lessonProgress"><i class="fas fa-book-open" style="margin-right:5px;"></i>Bài 1/4</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="lessonContent" class="lesson-content-body"></div>
+                <div style="display:flex;gap:15px;margin-top:30px;">
+                    <button class="btn-secondary full-width" id="prevLessonBtn" onclick="navLesson(-1)"><i
+                            class="fas fa-chevron-left"></i> Bài trước</button>
+                    <button class="btn-primary full-width" id="nextLessonBtn" onclick="navLesson(1)">Bài tiếp theo <i
+                            class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="courseData.js"></script>
+    <script src="lessons.js"></script>
+    <script src="extendedCourses.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
